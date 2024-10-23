@@ -1,17 +1,13 @@
-import React from 'react';
 
-interface CardMessageProps {
-    titule: string;
-    description: string;
+
+function Button(props: any) {
+    return(
+        <button className="w-[90%] h-10 bg-[#48A2E7CC] rounded-sm text-white" onClick={props.onClick}>
+            <p className="color-white">
+                Agregar
+            </p>
+        </button>
+    )
 }
 
-const CardMessage: React.FC<CardMessageProps> = (props:any) => {
-    return ( 
-        <div className="bg-white pt-5 pb-5 pt-14 shadow-[2px_10px_14px_-7px_rgba(0,0,0,0.26)]">
-            <p className="text-[4.3vh] opacity-65 font-bold px-16">{props.titule}</p>
-            <p className="text-[2.2vh] px-16">{props.description}</p>
-        </div>
-    );
-}
-
-export default CardMessage;
+export default Button; 
