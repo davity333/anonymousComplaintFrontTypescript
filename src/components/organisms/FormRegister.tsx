@@ -4,7 +4,7 @@ import FieldRegister from "../molecules/FieldRegister";
 import Label from "../atoms/Label";
 
 function FormRegister() {
-    
+
 
 
 
@@ -22,26 +22,28 @@ function FormRegister() {
                     title={"Segundo nombre"}
                 ></FieldName>
             </div>
-            
+
             <div className="mb-2">
                 <div className="ml-4">
                     <Label text={"Correo electronico"}></Label>
                 </div>
-            <FieldRegister>
-            </FieldRegister>
+                <FieldRegister>
+                </FieldRegister>
             </div>
 
             <div className="mb-7">
-            <div className="ml-4">
+                <div className="ml-4">
                     <Label text={"Contraseña"}></Label>
                 </div>
-            <FieldRegister>
-            </FieldRegister>
+                <FieldRegister>
+                </FieldRegister>
             </div>
 
             <div className="w-full h-[20%] flex justify-center items-center -mt-8">
+                <button className="w-[90%] h-[50%] bg-[#48A2E7CC] rounded-sm">
+                    Iniciar sesión
+                </button>
             </div>
-            <button >awea</button>
         </form>
     )
 }
