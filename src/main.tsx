@@ -8,6 +8,8 @@ import Register from './Pages/Register.js'
 import House from './Pages/House.js'
 import Denuntiation from './Pages/Denunciation.js'
 import Empresa from './Pages/Empresa.js'
+import DenunciasHechas from './Pages/DenunciasHechas.tsx'
+import Lugares from './Pages/Lugares.tsx'
 const router= createBrowserRouter ([
   {
     path: "/",
@@ -32,6 +34,14 @@ const router= createBrowserRouter ([
   {
     path: "/Empresa",
     element: <Empresa/>
+  },
+  {
+    path: "Denuncias",
+    element: <DenunciasHechas></DenunciasHechas>
+  },
+  {
+    path: "Lugares",
+    element: <Lugares></Lugares>
   }
   
 ])

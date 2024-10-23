@@ -1,5 +1,11 @@
+import { useState } from "react";
+interface Categoria {
+    value: string; 
+    label: string;
+}
 function HacerDenuncia() {
-    const categorias = [
+    const categorias: Categoria[] = [
+        { value: '', label: 'Seleccione una categoría' },
         { value: 'Robo', label: 'Robo' },
         { value: 'Violencia domestica', label: 'Violencia doméstica' },
         { value: 'Acoso sexual', label: 'Acoso sexual' },
@@ -9,33 +15,35 @@ function HacerDenuncia() {
         { value: 'Narcotrafico o consumo de drogas', label: 'Narcotráfico o consumo de drogas' },
         { value: 'Desaparicion de personas', label: 'Desaparición de personas' },
         { value: 'Abuso de autoridad', label: 'Abuso de autoridad' },
-        { value: 'Corrupcion', label: 'Corrupción' },
+        { value: 'Corrupción', label: 'Corrupción' },
         { value: 'Maltrato animal', label: 'Maltrato animal' },
         { value: 'Amenazas', label: 'Amenazas' },
         { value: 'Contaminacion ambiental', label: 'Contaminación ambiental' }
     ];
-    
+    const [selectedCategory, setSelectedCategory] = useState('');
+
+    const categoria = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const value = event.target.value;
+        setSelectedCategory(value);
+        localStorage.setItem('categoria', value);
+    };
+
 
     return ( 
         <>
-            <div className="w-[100%] h-[40vh] 
-        bg-[url('fondo.png')] bg-no-repeat bg-cover ">
-
-            
-                <div className="flex justify-center text-white text-4xl">
-                    <p className="mt-28">Realizar denuncia</p>
-                </div>
-            
-                <div className="flex justify-center mt-4">
-                <select>
-                    {categorias.map((option) => (
-                        <option key={option.value} value={option.value}>
-                            {option.label}
-                        </option>
-                ))}
-                </select>
-                </div>
-            </div>
+            <div className="flex justify-center">
+            <select className="h-10 w-64 bg-white text-gray-700 border 
+            border-gray-300 rounded-lg shadow-md focus:outline-none 
+            focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+            transition duration-300 ease-in-out px-3"
+            onChange={categoria}>
+                {categorias.map((option) => (
+            <option key={option.value} value={option.value} className="text-gray-700">
+                {option.label}
+            </option>
+        ))}
+    </select>
+</div>
         </>
     );
 }

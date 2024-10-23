@@ -23,11 +23,6 @@ function Introduction() {
             <div className="flex justify-center">
                 <img src="signo.png" alt="" className="h-44 absolute -mt-20" />
             </div>
-
-
-            <div>
-
-            </div>
         </>
     );
 }

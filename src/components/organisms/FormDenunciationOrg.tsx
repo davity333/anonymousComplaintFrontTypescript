@@ -1,6 +1,16 @@
+import { useEffect, useState } from "react";
 import FormDenunciation from "../molecules/FormDenunciation";
 
 function FormDenunciationOrg() {
+    const [categoria, setCategoria] = useState<string>('');
+
+    useEffect(() => {
+        const categoriaLocal = localStorage.getItem('categoria');
+        if (categoriaLocal) {
+            setCategoria(categoriaLocal);
+        }
+    }, []);
+
     return ( 
         <>
     <div className="flex justify-center items-center gap-5">
@@ -15,7 +25,7 @@ function FormDenunciationOrg() {
             </div>
 
             <div className="flex justify-center">
-                <h2 className="text-2xl font-light">Categoria</h2>
+                <h2 className="text-2xl font-light">{categoria}</h2>
             </div>   
 
 
@@ -27,7 +37,7 @@ function FormDenunciationOrg() {
                 </div>
 
         </>
-     );
+    );
 }
 
 export default FormDenunciationOrg;
