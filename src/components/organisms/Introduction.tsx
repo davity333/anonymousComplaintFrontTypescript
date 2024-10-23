@@ -9,7 +9,6 @@ function Introductions() {
 
     return (
         <>
-        <Header></Header>
         <Introduction></Introduction>
 
         <div className="relative w-full h-[37vh]">

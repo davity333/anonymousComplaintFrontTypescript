@@ -1,11 +1,11 @@
-import Header from "../components/molecules/header";
+import HeaderAdmin from "../components/molecules/HeaderAdmin";
 import Introductions from "../components/organisms/Introduction";
 import MessageHouse from "../components/organisms/MessageHouse";
 import Statistics from "../components/organisms/Statistics";
-function House() {
+function HouseAdmin() {
     return ( 
         <>
-            <Header></Header>
+            <HeaderAdmin></HeaderAdmin>
             <Introductions></Introductions>
             <Statistics></Statistics>
             <MessageHouse></MessageHouse>
@@ -13,4 +13,4 @@ function House() {
     );
 }
 
-export default House;
+export default HouseAdmin;
