@@ -11,6 +11,10 @@ import Empresa from './Pages/Empresa.js'
 import DenunciasHechas from './Pages/DenunciasHechas.tsx'
 import Lugares from './Pages/Lugares.tsx'
 import HouseAdmin from './Pages/HouseAdmin.tsx'
+import { Buffer } from 'buffer';
+
+
+
 const router= createBrowserRouter ([
   {
     path: "/",
@@ -48,11 +52,12 @@ const router= createBrowserRouter ([
     path: "Lugares",
     element: <Lugares></Lugares>
   }
-  
 ])
+
+window.Buffer = Buffer;
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}/>
   </StrictMode>,
 );

@@ -1,7 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import { createRequire } from 'module';
 
-// https://vite.dev/config/
+const require = createRequire(import.meta.url);
+
 export default defineConfig({
-  plugins: [react()],
-})
+    resolve: {
+        alias: {
+            buffer: require.resolve('buffer/')
+        }
+    },
+    define: {
+        global: {},
+        Buffer: 'buffer.Buffer'
+    }
+});

@@ -8,6 +8,8 @@ function DenunciasOrg() {
     const [haeaderBoolean, setHeaderBoolean] = useState(false);
 
     useEffect(() => {
+
+
         let data = localStorage.getItem("User");
         if (data === "institucion") {
             setHeaderBoolean(true);

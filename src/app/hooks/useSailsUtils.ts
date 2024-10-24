@@ -1,5 +1,5 @@
 import { useEffect, useContext } from "react";
-import { sailsContext } from "@/Context";
+import { sailsContext } from "../../Context";
 import { HexString } from "@gear-js/api";
 import { SponsorData } from "../SailsCalls/types";
 
